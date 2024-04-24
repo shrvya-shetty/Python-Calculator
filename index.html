@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask Calculator</title>
+</head>
+<body>
+    <h1>Flask Calculator</h1>
+    <form action="/calculate" method="post">
+        <center><input type="text" name="expression" value="{{ expression }}" autofocus>
+        <input type="submit" value="Calculate"></center>
+    </form>
+    {% if result %}
+    <h2>Result: {{ result }}</h2>
+    {% endif %}
+    {% if error %}
+    <h2 style="color: rgb(0, 255, 55);">{{ error }}</h2>
+    {% endif %}
+</body>
+</html>
