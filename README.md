@@ -10,6 +10,7 @@ This project provides a basic calculator application that users can access throu
 ## Features
 
 - Accepts arithmetic expressions as input
+- Perform basic operation
 - Evaluates expressions using Python's `eval()` function
 - Displays the result or any error messages to the user
 - Basic error handling for invalid expressions
