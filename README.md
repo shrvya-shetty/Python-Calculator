@@ -37,7 +37,6 @@ This project provides a basic calculator application that users can access throu
     python app.py
     ```
 
-2. Open a web browser and navigate to [http://localhost:5000](http://localhost:5000).
 3. Input your arithmetic expression in the text field.
 4. Press the "Calculate" button to see the result.
 
