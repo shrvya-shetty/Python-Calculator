@@ -14,7 +14,7 @@ def calculate():
         result = eval(expression)
         return render_template('index.html', result=result, expression=expression)
     except Exception as e:
-        error_message = "Error: " + str(e)
+        error_message = "Error:  " + str(e)
         return render_template('index.html', error=error_message, expression=expression)
 
 if __name__ == '__main__':
