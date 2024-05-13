@@ -4,18 +4,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flask Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .calculator {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            text-align: center;
+            margin-top: 20px;
+        }
+        input[type="text"] {
+            width: calc(100% - 100px);
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            outline: none;
+        }
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .error {
+            color: #ff0000;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Flask Calculator</h1>
-    <form action="/calculate" method="post">
-        <center><input type="text" name="expression" value="{{ expression }}" autofocus>
-        <input type="submit" value="Calculate-Value"></center>
-    </form>
-    {% if result %}
-    <h2>Result: {{ result }}</h2>
-    {% endif %}
-    {% if error %}
-    <h2 style="color: rgb(0, 255, 55);">{{ error }}</h2>
-    {% endif %}
+    <div class="calculator">
+        <h1>Flask Calculator</h1>
+        <form action="/calculate" method="post">
+            <input type="text" name="expression" placeholder="Enter expression" autofocus>
+            <input type="submit" value="Calculate">
+        </form>
+        {% if result %}
+        <div class="result">
+            <h2>Result: {{ result }}</h2>
+        </div>
+        {% endif %}
+        {% if error %}
+        <div class="error">
+            <h2>{{ error }}</h2>
+        </div>
+        {% endif %}
+    </div>
 </body>
 </html>
